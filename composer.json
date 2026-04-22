@@ -1,0 +1,20 @@
+{
+    "name": "servidor/html",
+    "autoload": {
+        "psr-4": {
+            "Servidor\\Html\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "CruzFerreira"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.10",
+        "phpoffice/phpspreadsheet": "^4.4",
+        "vlucas/phpdotenv": "^5.6",
+        "mercadopago/dx-php": "3.5.1",
+        "erusev/parsedown": "^1.7"
+    }
+}

@@ -1,0 +1,18 @@
+import flask
+
+app = flask.Flask(__name__)
+
+def main():
+	app.run(host='0.0.0.0', port=5000) # Roda no IP local e porta 5000
+
+@app.route('/webhook', methods=['POST']) # Endpoint para o webhook
+def handle_webhook():
+	if flask.request.method == 'POST':
+		data = flask.request.json # Obtém os dados JSON do pedido
+		print(f"Recebido: {data}") # Processa os dados (ex: salve em um arquivo ou banco de dados)
+		return "Webhook recebido com sucesso!", 200 # Responde com status 200 OK
+	else:
+		return "Método não permitido", 405
+
+if __name__ == '__main__':
+	main()
